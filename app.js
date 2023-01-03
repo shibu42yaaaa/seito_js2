@@ -33,6 +33,15 @@ const clickHandler = (e) => {
 };
 
 // ボタンがクリックされたら正誤判定
+let handleIndex = 0;
+const buttonLength = $button.length;
+while(handleIndex < buttonLength){
+  $button[handleIndex].addEventListener('click', (e) =>{
+  clickHandler(e);
+  });
+  buttonIndex++;
+}
+
 $button[0].addEventListener('click', (e) =>{
     clickHandler(e);
 });
