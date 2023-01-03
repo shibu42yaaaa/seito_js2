@@ -23,36 +23,28 @@ const setupQuiz = () => {
 }
 setupQuiz();
 
+//クリックのリファクタリング
+const clickHandler = (e) => {
+  if(correct === e.target.textContent){
+    window.alert('正解です');
+  } else {
+    window.alert('不正解です。。');
+  }
+};
+
 // ボタンがクリックされたら正誤判定
-$button[0].addEventListener('click', () =>{
-    if(correct === $button[0].textContent){
-      window.alert('正解です');
-    } else {
-        window.alert('不正解です。。');
-    }
+$button[0].addEventListener('click', (e) =>{
+    clickHandler(e);
 });
 
-$button[1].addEventListener('click', () =>{
-    if(correct === $button[1].textContent){
-      window.alert('正解です');
-    } else {
-        window.alert('不正解です。。');
-    }
+$button[1].addEventListener('click', (e) =>{
+    clickHandler(e);
 });
 
-$button[2].addEventListener('click', () =>{
-    if(correct === $button[2].textContent){
-      window.alert('正解です');
-    } else {
-        window.alert('不正解です。。');
-    }
+$button[2].addEventListener('click', (e) =>{
+    clickHandler(e);
 });
 
-$button[3].addEventListener('click', () =>{
-    if(correct === $button[3].textContent){
-      window.alert('正解です');
-    } else {
-        window.alert('不正解です。。');
-    }
+$button[3].addEventListener('click', (e) =>{
+    clickHandler(e);
 });
-
