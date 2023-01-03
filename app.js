@@ -33,6 +33,8 @@ const quiz = [
 const quizLength = quiz.length;
 let quizIndex = 0;
 
+//結果を表示
+let score = 0;
 
 
 
@@ -58,6 +60,7 @@ setupQuiz();
 const clickHandler = (e) => {
   if(quiz[quizIndex].correct === e.target.textContent){
     window.alert('正解です');
+    score++;
   } else {
     window.alert('不正解です。。');
   }
@@ -69,7 +72,7 @@ const clickHandler = (e) => {
   setupQuiz();
   } else {
   // 問題数がもうない
-  window.alert('終了！');
+  window.alert('終了！あなたの正解すうは' + score + '/' + quizLength + 'です。');
   }
 };
 
