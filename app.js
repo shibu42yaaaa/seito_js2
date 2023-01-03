@@ -10,12 +10,13 @@ const correct = 'パリのエッフェル塔';
 
 //ボタンのアクション
 const $button = document.getElementsByTagName('button');
+const buttonLength = $button.length;
+
 // クイズの問題文、選択肢の定義
 const setupQuiz = () => {
   document.getElementById('js-question').textContent = question
 
   let buttonIndex = 0;
-  let buttonLength = $button.length;
   while(buttonIndex < buttonLength){
     $button[buttonIndex].textContent = answers[buttonIndex]
     buttonIndex++;
@@ -32,28 +33,12 @@ const clickHandler = (e) => {
   }
 };
 
-// ボタンがクリックされたら正誤判定
-let handleIndex = 0;
-const buttonLength = $button.length;
-while(handleIndex < buttonLength){
-  $button[handleIndex].addEventListener('click', (e) =>{
-  clickHandler(e);
-  });
-  buttonIndex++;
+let handlerIndex = 0;
+
+while(handlerIndex < buttonLength){
+  $button[handlerIndex].addEventListener('click', (e) =>{
+    clickHandler(e);
+});
+    handlerIndex++;
 }
 
-$button[0].addEventListener('click', (e) =>{
-    clickHandler(e);
-});
-
-$button[1].addEventListener('click', (e) =>{
-    clickHandler(e);
-});
-
-$button[2].addEventListener('click', (e) =>{
-    clickHandler(e);
-});
-
-$button[3].addEventListener('click', (e) =>{
-    clickHandler(e);
-});
